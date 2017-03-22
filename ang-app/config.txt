@@ -1,0 +1,5 @@
+API key = AIzaSyBqFIt8tOFbDJ2sJOh65RAQE7FA99j2MqI
+
+
+client id = 540435543425-poue03r8sd982t0h2kqbuu0h5ilsms2f.apps.googleusercontent.com
+client secret = FgHgqAsU8oGgjbwfj-dx8VEt

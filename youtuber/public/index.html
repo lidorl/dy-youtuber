@@ -1,0 +1,38 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <script src="https://use.fontawesome.com/49f4fdf8a5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="youtuberApp">
+  <div ng-controller="homeController">
+    <div class="header">
+      Dynamic YouTuber
+    </div>
+    <div class="content">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="video-container">
+              <dy-youtube-player></dy-youtube-player><!-- video player -->
+          </div>
+          <div class="my-list-container" style="width: {{ (getSizeOfList()*250) + 'px'}}" dy-scroll> <!-- it's a bit ugly..... i know -->
+            <my-list-item ng-repeat="(key, video) in myList"></my-list-item>
+          </div>
+        </div>
+        <div class="search-block"> <!-- serach area -->
+          <div class="search-bar">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="Search..." ng-model="searchText" ng-change="search($event)">
+          </div>
+          <div ng-repeat="video in searchResults" class="search-results-container">
+            <search-result-block></search-result-block>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

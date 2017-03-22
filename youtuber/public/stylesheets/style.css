@@ -1,0 +1,150 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: rgba(0,0,0,0.8);
+}
+
+a {
+  color: #00B7FF;
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.header{
+  background: rgb(185, 30, 30);
+  color: white;
+  height: 50px;
+  width: 100vw;
+  padding: 0 0.8em;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.content {
+  height: 90%;
+}
+  .content > .pure-g{
+    height: 100%;
+  }
+.search-block{
+  position: fixed;
+  width:30%;
+  height:100%;
+  right:0;
+  top:0;
+  background: rgba(0,0,0,0.9);
+  padding: 0em 0;
+  overflow-y: auto;
+  transform: translate(89%,0);
+  transition: 200ms all linear;
+}
+  .search-block:hover{
+    transform: translate(0,0);
+  }
+
+.search-bar{
+  width: 100%;
+  text-align: center;
+  height:50px;
+}
+
+  .search-bar input {
+      width: 100%;
+      height: 100%;
+      padding: 0.5em 3em;
+      background: rgba(193, 193, 193, 0.28);
+      border: none;
+      color: white;
+  }
+    .search-bar input:focus{
+      outline: none;
+    }
+
+
+.search-icon{
+  position: absolute;
+  left: 4%;
+  top: 2%;
+  opacity: 0.5;
+  color: white;
+  font-size: 23px;
+}
+.video-container{
+  text-align: center;
+  padding: 0 0 0.5em 0;
+}
+.dy-player{
+  width:100%;
+  height: 65%;
+}
+.search-result-block{
+    position: relative;
+    margin-bottom: 0.2em;
+    box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.2);
+    transition: 200ms all linear;
+    transform: translate(0,0);
+}
+  .search-result-block:hover{
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+  }
+
+.search-result-block-out{
+  transform: translate(100%,0);
+  position: absolute;
+}
+
+.search-result-block div{
+  word-break: break-all;
+}
+.search-result-header {
+    padding: 0.2em 0.5em;
+    color: white;
+    letter-spacing:normal;
+}
+.search-result-img{
+  width: 100%;
+}
+.my-list-container{
+  position: absolute;
+  max-height: 250px;
+  transform: translate(0,0);
+  transition: 200ms all linear;
+}
+.list-item-block{
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 0.1em;
+  border-radius: 1px;
+  border: thin solid rgba(10, 10, 10, 0.2);
+  transition: 200ms all linear;
+}
+.list-item-header {
+    background: rgb(76, 76, 76);
+    padding: 0.2em 0.5em;
+    color: white;
+    height:43px;
+}
+.list-item-img{
+  width: 100%
+}
+.remove-item{
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-105%,-105%);
+}
+.play-item{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(5%,-105%);
+}
