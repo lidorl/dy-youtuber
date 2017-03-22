@@ -33,6 +33,10 @@ a {
   .content > .pure-g{
     height: 100%;
   }
+
+/*
+  Search area
+*/
 .search-block{
   position: fixed;
   width:30%;
@@ -76,6 +80,10 @@ a {
   color: white;
   font-size: 23px;
 }
+
+/*
+  Video Player
+*/
 .video-container{
   text-align: center;
   padding: 0 0 0.5em 0;
@@ -84,6 +92,10 @@ a {
   width:100%;
   height: 65%;
 }
+
+/*
+  search results
+*/
 .search-result-block{
     position: relative;
     margin-bottom: 0.2em;
@@ -112,6 +124,10 @@ a {
 .search-result-img{
   width: 100%;
 }
+
+/*
+  video library
+*/
 .my-list-container{
   position: absolute;
   max-height: 250px;
