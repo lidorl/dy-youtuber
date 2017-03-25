@@ -18,7 +18,10 @@ app.controller('homeController', ['$scope', '$sce', 'searchVideo', 'lsConnector'
 //you tube player directvei
 app.directive('dyYoutubePlayer', function(){
   return {
-    templateUrl: 'templates/player.html'
+    templateUrl: 'templates/player.html',
+    link: function(scope, el, attr){
+      //todo, add youtube player api
+    }
   }
 })
 
@@ -48,14 +51,15 @@ app.directive('myListItem', function(){
 app.directive('dyScroll', function(){
   return (function(scope, element, attrs){
     var delta = 0;
-    element[0].addEventListener('mousewheel', function(e){
+    var el = element[0];
+    element[0].parentElement.addEventListener('mousewheel', function(e){
       if (e.deltaY > 0)
         delta -= 5;
       else
         delta += 5;
       delta = (delta > 0) ? 0 : delta;
       delta = (delta < -50) ? -50 : delta;
-      this.style.transform = 'translate(' + delta + '%,0)'
+      el.style.transform = 'translate(' + delta + '%,0)'
     })
   })
 })

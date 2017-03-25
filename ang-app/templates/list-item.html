@@ -1,16 +1,9 @@
-<div class="list-item-block">
+<div class="list-item-block" ng-click="selectVideo(video)">
   <div class="list-item-header">{{video.title.substring(0,45)}}</div>
     <div>
       <img src="{{trustUrl(video.pic.url)}}" class="list-item-img">
     </div>
-    <div class="remove-item">
-      <a class="pure-button button-error" href="#" ng-click="removeVideo(video)">
-        <i class="fa fa-times"></i>
-      </a>
-    </div>
-    <div class="play-item">
-      <a class="pure-button button-success" href="#" ng-click="selectVideo(video)">
-        <i class="fa fa-play"></i>
-      </a>
+    <div class="remove-item" ng-click="removeVideo(video)">
+      <i class="fa fa-trash"></i>
     </div>
 </div>

@@ -7,6 +7,7 @@ function home($scope, $sce, searchVideo, lsConnector){
   var DEFAULT_URL = 'http://www.youtube.com/embed/' + DEFAULT_VIDEO_ID;
   var AUTOPLAY = '?autoplay=1';
 
+  $scope.currTitle = "Dynamic YouTuber";
   $scope.myList = {};
   $scope.currVid = {};
   $scope.currVidUrl = DEFAULT_URL;
@@ -33,6 +34,7 @@ function home($scope, $sce, searchVideo, lsConnector){
   function selectVideo(video){
     $scope.currVid = video;
     $scope.currVidUrl = getVideoUrl(video.id);
+    $scope.currTitle = video.title;
   }
 
   //add video to library
@@ -55,7 +57,12 @@ function home($scope, $sce, searchVideo, lsConnector){
   function search(e){
     if ($scope.searchText.length > 0){
       searchVideo($scope.searchText, function(res){
-        $scope.searchResults = res;
+        var items = [];
+        for (var i = 0; i < res.length; i++) {
+          if ($scope.myList[res[i].id] == undefined)
+            items.push(res[i]);
+        }
+        $scope.searchResults = items;
         $scope.$apply();
       })
     }
@@ -63,6 +70,10 @@ function home($scope, $sce, searchVideo, lsConnector){
       $scope.searchResults = [];
     }
   }
+
+  $scope.$on('videoEnded', function(){
+    console.warn('video endedededed!!!!')
+  })
 
   $scope.getSizeOfList = getSizeOfList;
   $scope.selectVideo = selectVideo;

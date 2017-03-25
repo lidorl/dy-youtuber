@@ -9,6 +9,23 @@ a {
   color: #00B7FF;
 }
 
+/*
+  Scrollbar
+*/
+
+.search-block::-webkit-scrollbar {
+    width: 1em;
+}
+
+.search-block::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+}
+
+.search-block::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 .button-error {
     background: rgb(202, 60, 60); /* this is a maroon */
 }
@@ -24,7 +41,6 @@ a {
   padding: 0 0.8em;
   display: table-cell;
   vertical-align: middle;
-  font-weight: bold;
 }
 
 .content {
@@ -46,10 +62,14 @@ a {
   background: rgba(0,0,0,0.9);
   padding: 0em 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0.7;
   transform: translate(89%,0);
+  z-index: 999;
   transition: 200ms all linear;
 }
   .search-block:hover{
+    opacity: 1;
     transform: translate(0,0);
   }
 
@@ -63,7 +83,7 @@ a {
       width: 100%;
       height: 100%;
       padding: 0.5em 3em;
-      background: rgba(193, 193, 193, 0.28);
+      background: rgba(0, 0, 0, 1);
       border: none;
       color: white;
   }
@@ -90,18 +110,19 @@ a {
 }
 .dy-player{
   width:100%;
-  height: 65%;
+  height: 100%;
 }
 
 /*
   search results
 */
 .search-result-block{
-    position: relative;
-    margin-bottom: 0.2em;
-    box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.2);
-    transition: 200ms all linear;
-    transform: translate(0,0);
+  position: relative;
+  margin: 0.1em 0;
+  height: 60px;
+  /* box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.2); */
+  transition: 200ms all linear;
+  transform: translate(0,0);
 }
   .search-result-block:hover{
     background: rgba(255,255,255,0.1);
@@ -123,13 +144,14 @@ a {
 }
 .search-result-img{
   width: 100%;
+  height:100%;
 }
 
 /*
   video library
 */
 .my-list-container{
-  position: absolute;
+  position: relative;
   max-height: 250px;
   transform: translate(0,0);
   transition: 200ms all linear;
@@ -141,10 +163,17 @@ a {
   margin: 0.1em;
   border-radius: 1px;
   border: thin solid rgba(10, 10, 10, 0.2);
+  opacity:0.75;
   transition: 200ms all linear;
 }
+
+  .list-item-block:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
 .list-item-header {
-    background: rgb(76, 76, 76);
+    background: rgba(76, 76, 76,0.32);
     padding: 0.2em 0.5em;
     color: white;
     height:43px;
@@ -157,10 +186,23 @@ a {
   top: 100%;
   left: 100%;
   transform: translate(-105%,-105%);
+  border: thin solid black;
+  padding: 0.2em 0.4em;
+  background: black;
+  color: white;
+  opacity: 0.75;
 }
-.play-item{
-  position: absolute;
+.library-window{
+  position: fixed;
   top: 100%;
   left: 0;
-  transform: translate(5%,-105%);
+  width:100%;
+  transform: translate(0,-25%);
+  background: rgba(0,0,0,0.9);
+  opacity: 0.5;
+  transition: 200ms all linear;
 }
+  .library-window:hover{
+    opacity: 1;
+    transform: translate(0,-100%);
+  }
